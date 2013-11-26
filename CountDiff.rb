@@ -1,6 +1,6 @@
 class CountDiff
   def initialize(str1, str2)
-    raise unless str1.is_a?(String) or str2.is_a?(String)
+    raise unless str1.is_a?(String) or str2.kind_of?(String)
     @str1 = str1
     @str2 = str2
   end
@@ -15,9 +15,8 @@ class CountDiff
         diff += len - i
         break
       end
-      if @str1[i] != @str2[i]
-        diff += 1
-      end
+
+      diff += 1 if @str1[i] != @str2[i]
     end
 
     diff
