@@ -6,7 +6,7 @@ class CountDiff
   end
 
   # Returns number of different characters when their order is important
-  def count_diff_order()
+  def count_diff_order
     diff = 0
 
     len = @str1.length > @str2.length ? @str1.length : @str2.length
@@ -23,7 +23,7 @@ class CountDiff
   end
 
   # Returns number of different characters when their order is not important
-  def count_diff()
+  def count_diff
     (@str1.chars.to_a - @str2.chars.to_a).length
   end
 end
