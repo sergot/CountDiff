@@ -20,6 +20,6 @@ class SimpleTest < Test::Unit::TestCase
   end
 
   def test_typecheck
-    assert_raise(RuntimeError) { CountDiff.new(1,1)}
+    assert_raise(RuntimeError) { CountDiff.new(1,1) }
   end
 end
