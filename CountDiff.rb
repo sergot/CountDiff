@@ -3,23 +3,15 @@ class CountDiff
     raise unless str1.kind_of?(String) or str2.kind_of?(String)
     @str1 = str1
     @str2 = str2
+
+    @str1, @str2 = @str2, @str1 if @str2.length > @str1.length # for zip in count_diff_order
   end
 
   # Returns number of different characters when their order is important
   def count_diff_order
-    diff = 0
-
-    len = @str1.length > @str2.length ? @str1.length : @str2.length
-    for i in 0..len
-      if !@str1[i] or !@str2[i]
-        diff += len - i
-        break
-      end
-
-      diff += 1 if @str1[i] != @str2[i]
+    @str1.chars.zip(@str2.chars).count do |fc, sc|
+      fc != sc
     end
-
-    diff
   end
 
   # Returns number of different characters when their order is not important
