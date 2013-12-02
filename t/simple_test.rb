@@ -9,6 +9,10 @@ class SimpleTest < Test::Unit::TestCase
     assert_equal(1, CountDiff.new('ba', 'aa').count_diff_order)
 
     assert_equal(2, CountDiff.new('ab', 'ba').count_diff_order)
+
+    assert_equal(3, CountDiff.new('def', 'abc').count_diff_order)
+
+    assert_equal(3, CountDiff.new('c', 'abb').count_diff_order)
   end
 
   def test_simple
@@ -19,6 +23,8 @@ class SimpleTest < Test::Unit::TestCase
     assert_equal(1, CountDiff.new('ab', 'bb').count_diff)
 
     assert_equal(2, CountDiff.new('ade', 'abc').count_diff)
+
+    assert_equal(3, CountDiff.new('aaa', 'b').count_diff)
   end
 
   def test_typecheck
