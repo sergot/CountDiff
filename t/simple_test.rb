@@ -10,8 +10,6 @@ class SimpleTest < Test::Unit::TestCase
 
     assert_equal(2, CountDiff.new('ab', 'ba').count_diff_order)
 
-    assert_equal(3, CountDiff.new('def', 'abc').count_diff_order)
-
     assert_equal(3, CountDiff.new('c', 'abb').count_diff_order)
   end
 
